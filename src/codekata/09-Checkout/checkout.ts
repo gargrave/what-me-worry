@@ -1,14 +1,19 @@
-class Checkout {
-  constructor(pricingRules) {
+import { PricingRules } from './rules'
+
+export class Checkout {
+  rules: PricingRules
+  cart: string[]
+
+  constructor(pricingRules: PricingRules) {
     this.rules = pricingRules
     this.cart = []
   }
 
-  scan(item) {
+  scan(item: string): void {
     this.cart.push(item)
   }
 
-  get total() {
+  get total(): number {
     let totalPrice = 0
 
     const cartMap = this.cart.reduce((acc, item) => {
@@ -31,9 +36,10 @@ class Checkout {
         let remainingItemQty = itemQty
 
         sortedKeys.forEach(ruleKey => {
-          while (remainingItemQty >= ruleKey) {
+          const key = parseInt(ruleKey)
+          while (remainingItemQty >= key) {
             totalPrice += ruleset[ruleKey]
-            remainingItemQty -= ruleKey
+            remainingItemQty -= key
           }
         })
       }
@@ -41,8 +47,4 @@ class Checkout {
 
     return totalPrice
   }
-}
-
-module.exports = {
-  Checkout,
 }
