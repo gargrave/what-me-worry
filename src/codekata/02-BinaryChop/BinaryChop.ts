@@ -33,7 +33,7 @@
   techniques did you use to fire those “off the wall” neurons?
 */
 
-function chopRecursive(value, arr, lo = 0, hi = arr.length - 1) {
+export const chopRecursive = (value, arr, lo = 0, hi = arr.length - 1) => {
   const len = hi - lo + 1
   if (len <= 1) {
     return arr[lo] === value ? lo : -1
@@ -54,7 +54,7 @@ function chopRecursive(value, arr, lo = 0, hi = arr.length - 1) {
   return -1
 }
 
-function chopIterative(value, arr) {
+export const chopIterative = (value, arr) => {
   if (!arr.length) {
     return -1
   }
@@ -82,11 +82,6 @@ function chopIterative(value, arr) {
     len = hi - lo + 1
   }
   return -1
-}
-
-module.exports = {
-  chopIterative,
-  chopRecursive,
 }
 
 /*
