@@ -1,8 +1,8 @@
 export type PricingRules = {
   [key: string]: {
-    [key: number]: number
-  }
-}
+    [key: number]: number;
+  };
+};
 
 export const defaultPricingRules: PricingRules = {
   A: {
@@ -15,4 +15,4 @@ export const defaultPricingRules: PricingRules = {
   },
   C: { 1: 20 },
   D: { 1: 15 },
-}
+};

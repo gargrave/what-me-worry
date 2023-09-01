@@ -1,53 +1,53 @@
-import Point, { IPoint } from './point'
+import Point, { IPoint } from "./point";
 
 export type BoardState = {
-  black: IPoint
-  white: IPoint
-}
+  black: IPoint;
+  white: IPoint;
+};
 
 export default class QueenAttack {
-  black: IPoint
-  white: IPoint
+  black: IPoint;
+  white: IPoint;
 
   constructor(boardState: BoardState) {
-    const { black, white } = boardState
+    const { black, white } = boardState;
 
     if (Point.areEqual(black, white)) {
-      throw Error('Queens cannot share the same space')
+      throw Error("Queens cannot share the same space");
     }
 
-    this.black = black
-    this.white = white
+    this.black = black;
+    this.white = white;
   }
 
   canAttack(): boolean {
     if (Point.sameRow(this.black, this.white)) {
-      return true
+      return true;
     }
     if (Point.sameCol(this.black, this.white)) {
-      return true
+      return true;
     }
     if (Point.diagonalFrom(this.black, this.white)) {
-      return true
+      return true;
     }
-    return false
+    return false;
   }
 
   toString(): string {
-    let board = []
+    let board = [];
     for (let x = 0; x < 8; x += 1) {
-      let row = []
+      let row = [];
       for (let y = 0; y < 8; y += 1) {
         if (Point.areEqual(this.white, [x, y])) {
-          row.push('W')
+          row.push("W");
         } else if (Point.areEqual(this.black, [x, y])) {
-          row.push('B')
+          row.push("B");
         } else {
-          row.push('_')
+          row.push("_");
         }
       }
-      board.push(row.join(' '))
+      board.push(row.join(" "));
     }
-    return board.join('\n')
+    return board.join("\n");
   }
 }

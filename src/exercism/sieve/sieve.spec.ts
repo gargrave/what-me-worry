@@ -1,4 +1,4 @@
-import { Primes } from './sieve'
+import { Primes } from "./sieve";
 
 /* prettier-ignore */
 const PRIMES_TO_1000 = [
@@ -16,29 +16,29 @@ const PRIMES_TO_1000 = [
   907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997
 ]
 
-describe('Sieve', () => {
-  it('correctly returns no primes under two', () => {
-    const expected: number[] = []
-    expect(Primes.find(1)).toEqual(expected)
-  })
+describe("Sieve", () => {
+  it("correctly returns no primes under two", () => {
+    const expected: number[] = [];
+    expect(Primes.find(1)).toEqual(expected);
+  });
 
-  it('correctly finds first prime', () => {
-    const expected = [2]
-    expect(Primes.find(2)).toEqual(expected)
-  })
+  it("correctly finds first prime", () => {
+    const expected = [2];
+    expect(Primes.find(2)).toEqual(expected);
+  });
 
-  it('correctly finds primes up to 10', () => {
-    const expected = [2, 3, 5, 7]
-    expect(Primes.find(10)).toEqual(expected)
-  })
+  it("correctly finds primes up to 10", () => {
+    const expected = [2, 3, 5, 7];
+    expect(Primes.find(10)).toEqual(expected);
+  });
 
-  it('correctly finds primes up to the max limit', () => {
-    const expected = [2, 3, 5, 7, 11, 13]
-    expect(Primes.find(13)).toEqual(expected)
-  })
+  it("correctly finds primes up to the max limit", () => {
+    const expected = [2, 3, 5, 7, 11, 13];
+    expect(Primes.find(13)).toEqual(expected);
+  });
 
-  it('correctly find primes up to 1000', () => {
-    const expected = PRIMES_TO_1000
-    expect(Primes.find(1000)).toEqual(expected)
-  })
-})
+  it("correctly find primes up to 1000", () => {
+    const expected = PRIMES_TO_1000;
+    expect(Primes.find(1000)).toEqual(expected);
+  });
+});

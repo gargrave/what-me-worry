@@ -1,21 +1,22 @@
 {
-  "name": "rollup-ts-starter",
+  "name": "what-me-worry",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Gabe Hargrave <gkhargrave@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c",
-    "test": "jest --watch"
+    "dev": "vitest --watch",
+    "test": "vitest --watch",
+    "format": "prettier --write \"**/*.{ts,md}\""
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.11",
-    "babel-jest": "^24.7.1",
-    "jest": "^24.7.1",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-node-resolve": "^4.2.3"
+    "@types/lodash": "^4.14.197",
+    "prettier": "^3.0.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vitest": "^0.34.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
